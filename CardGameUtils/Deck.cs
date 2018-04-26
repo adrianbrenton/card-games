@@ -2,7 +2,7 @@
 
 namespace CardGameUtils
 {
-    public class Class1
+    public class Deck
     {
     }
 }
