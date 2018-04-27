@@ -8,7 +8,6 @@ namespace CardGameUtils.Tests
         [Fact]
         public void Test1()
         {
-            int i = 3;
         }
     }
 }
