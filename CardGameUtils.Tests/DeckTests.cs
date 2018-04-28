@@ -3,11 +3,15 @@ using Xunit;
 
 namespace CardGameUtils.Tests
 {
-    public class UnitTest1
+    public class DeckTests
     {
-        [Fact]
+        [Theory]
+        [InlineData]
         public void Test1()
         {
+            Deck deck = new Deck();
+
+
 
         }
     }
