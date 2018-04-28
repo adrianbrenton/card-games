@@ -3,5 +3,6 @@ namespace CardGameUtils
 {
     public struct Card
     {
+        
     }
 }
