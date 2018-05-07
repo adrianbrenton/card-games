@@ -5,11 +5,13 @@ namespace CardGameUtils
 {
     public class Player
     {
-        HashSet<Card> hand;
+        private HashSet<Card> hand;
 
         public Player()
         {
-            
+            this.hand = new HashSet<Card>();
         }
+
+
     }
 }
