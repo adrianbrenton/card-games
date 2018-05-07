@@ -12,6 +12,19 @@ namespace CardGameUtils
             this.hand = new HashSet<Card>();
         }
 
+        public void ReceiveCard(Card card)
+        {
+            hand.Add(card);
+        }
 
+        public Card PlayCard(Card card)
+        {
+            if (!hand.Remove(card))
+            {
+                throw new ArgumentOutOfRangeException(
+                    nameof(card), "Chosen card not in hand");
+            }
+            return card;
+        }
     }
 }
