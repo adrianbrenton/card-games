@@ -4,6 +4,13 @@ namespace Blackjack
 {
     public class BlackjackGame
     {
+        
+        public BlackjackGame()
+        {
+            
+        }
+
+    
         public void PlayRound()
         {
             throw new NotImplementedException();
@@ -15,4 +22,7 @@ namespace Blackjack
 /* PLAN:
  * Declare and Instantiate players
  * Create queue of players
- * 
+ * while not allPlayersFinished
+ * {
+ *      for
+ */
