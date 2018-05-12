@@ -7,6 +7,12 @@ namespace Blackjack
         public void PlayRound()
         {
             throw new NotImplementedException();
+
         }
     }
 }
+
+/* PLAN:
+ * Declare and Instantiate players
+ * Create queue of players
+ * 
