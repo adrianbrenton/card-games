@@ -5,8 +5,8 @@ namespace CardGameUtils.Tests
 {
     public class PlayerTests
     {
-        private Card card;
-        private Player player;
+        Card card;
+        Player player;
 
         public PlayerTests()
         {
