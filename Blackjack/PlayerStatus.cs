@@ -3,6 +3,6 @@ namespace Blackjack
 {
     public enum PlayerStatus
     {
-        Active, Stuck, Bust
+        Active, Stuck, OnTarget, Bust
     }
 }
