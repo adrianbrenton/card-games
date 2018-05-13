@@ -5,7 +5,7 @@ namespace CardGameUtils
 {
     public class Player
     {
-        HashSet<Card> hand;
+        protected HashSet<Card> hand;
         public bool hasTurn { get; set; }
 
         public Player()
@@ -13,7 +13,7 @@ namespace CardGameUtils
             this.hand = new HashSet<Card>();
         }
 
-        public void ReceiveCard(Card card)
+        public virtual void ReceiveCard(Card card)
         {
             hand.Add(card);
         }
