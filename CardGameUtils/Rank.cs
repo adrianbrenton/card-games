@@ -3,7 +3,7 @@ namespace CardGameUtils
 {
     public enum Rank
     {
-        Ace, Two, Three, Four, Five, Six, Seven,
-        Eight, Nine, Ten, Jack, Queen, King
+        Two=2, Three, Four, Five, Six, Seven, Eight, 
+        Nine, Ten, Jack, Queen, King, Ace
     }
 }
