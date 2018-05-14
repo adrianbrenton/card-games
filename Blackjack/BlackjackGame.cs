@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using CardGameUtils;
+
 namespace Blackjack
 {
     public class BlackjackGame
@@ -9,39 +11,50 @@ namespace Blackjack
         BlackjackPlayer player1;
         BlackjackPlayer player2;
         BlackjackPlayer player3;
+        Deck deck;
 
-        Queue<BlackjackPlayer> players;
+        List<BlackjackPlayer> players;
 
         public BlackjackGame()
         {
             numberOfPlayers = 3;
-            players = new Queue<BlackjackPlayer>(numberOfPlayers);
+            players = new List<BlackjackPlayer>(numberOfPlayers);
             player1 = new BlackjackPlayer();
             player2 = new BlackjackPlayer();
             player3 = new BlackjackPlayer();
-            players.Enqueue(player1);
-            players.Enqueue(player2);
-            players.Enqueue(player3);
+            players.Add(player1);
+            players.Add(player2);
+            players.Add(player3);
+            deck = new Deck();
+            deck.Shuffle();
 
         }
 
     
         public void PlayRound()
         {
-            
+            DealHands();
+            while 
+
 
         }
 
-        private  void DealHands()
+        private void DealHands()
         {
-            
+            foreach (BlackjackPlayer player in players)
+            {
+                player.ReceiveCard(deck.DealNext());
+                player.ReceiveCard(deck.DealNext());
+            }
         }
+
+     
     }
 }
 
 /* PLAN:
  * Declare and Instantiate players
- * Create queue of players
+ * Create list of players
  * while (not (all players Stuck OR all players OnTarget) )
  * {
  *      currentPlayer = pop a player off the queue
