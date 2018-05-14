@@ -6,7 +6,7 @@ namespace CardGameUtils
     public class Player
     {
         protected HashSet<Card> hand;
-        public bool hasTurn { get; set; }
+        public bool HasTurn { get; set; }
 
         public Player()
         {
