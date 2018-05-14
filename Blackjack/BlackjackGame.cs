@@ -34,7 +34,7 @@ namespace Blackjack
         public void PlayRound()
         {
             DealHands();
-            while 
+
 
 
         }
@@ -46,6 +46,18 @@ namespace Blackjack
                 player.ReceiveCard(deck.DealNext());
                 player.ReceiveCard(deck.DealNext());
             }
+        }
+
+        private bool PlayersActive()
+        {
+            foreach (BlackjackPlayer player in players)
+            {
+                if (player.Status == PlayerStatus.Active)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
      
