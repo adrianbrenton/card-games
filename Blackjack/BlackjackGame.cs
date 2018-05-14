@@ -31,15 +31,24 @@ namespace Blackjack
         }
 
     
-        public void PlayRound()
+        public void PlayOneGame()
         {
             DealHands();
-
+            while(PlayersActive())
+            {
+                foreach (BlackjackPlayer player in players)
+                {
+                    if (player.Status == PlayerStatus.Active)
+                    {
+                        OfferCard(player)
+                    }
+                }
+            }
 
 
         }
 
-        private void DealHands()
+        void DealHands()
         {
             foreach (BlackjackPlayer player in players)
             {
@@ -48,7 +57,7 @@ namespace Blackjack
             }
         }
 
-        private bool PlayersActive()
+        bool PlayersActive()
         {
             foreach (BlackjackPlayer player in players)
             {
@@ -58,6 +67,11 @@ namespace Blackjack
                 }
             }
             return false;
+        }
+
+        void OfferCard(BlackjackPlayer player)
+        {
+            
         }
 
      
