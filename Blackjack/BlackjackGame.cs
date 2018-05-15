@@ -40,7 +40,7 @@ namespace Blackjack
                 {
                     if (player.Status == PlayerStatus.Active)
                     {
-                        OfferCard(player)
+                        OfferCard(player);
                     }
                 }
             }
