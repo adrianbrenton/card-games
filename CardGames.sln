@@ -1,8 +1,6 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGames", "CardGames\CardGames.csproj", "{DB1B5878-4B02-4290-A89A-9A23689532F0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGameUtils", "CardGameUtils\CardGameUtils.csproj", "{BC4FEDCF-2EE7-4531-806E-EEF9F0F04CCD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGameUtils.Tests", "CardGameUtils.Tests\CardGameUtils.Tests.csproj", "{D5865F72-8A58-41A4-A739-275C85663888}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DB1B5878-4B02-4290-A89A-9A23689532F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB1B5878-4B02-4290-A89A-9A23689532F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB1B5878-4B02-4290-A89A-9A23689532F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB1B5878-4B02-4290-A89A-9A23689532F0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC4FEDCF-2EE7-4531-806E-EEF9F0F04CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BC4FEDCF-2EE7-4531-806E-EEF9F0F04CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC4FEDCF-2EE7-4531-806E-EEF9F0F04CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
