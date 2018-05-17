@@ -8,23 +8,18 @@ namespace Blackjack
     public class BlackjackGame
     {
         int numberOfPlayers;
-        BlackjackPlayer player1;
-        BlackjackPlayer player2;
-        BlackjackPlayer player3;
         Deck deck;
 
         List<BlackjackPlayer> players;
 
-        public BlackjackGame()
+        public BlackjackGame(int numberOfPlayers = 3)
         {
-            numberOfPlayers = 3;
+            this.numberOfPlayers = numberOfPlayers;
             players = new List<BlackjackPlayer>(numberOfPlayers);
-            player1 = new BlackjackPlayer();
-            player2 = new BlackjackPlayer();
-            player3 = new BlackjackPlayer();
-            players.Add(player1);
-            players.Add(player2);
-            players.Add(player3);
+            for (int i = 0; i < numberOfPlayers; i++)
+            {
+                players.Add(new BlackjackPlayer());
+            }
             deck = new Deck();
             deck.Shuffle();
 
@@ -44,7 +39,6 @@ namespace Blackjack
                     }
                 }
             }
-
 
         }
 
