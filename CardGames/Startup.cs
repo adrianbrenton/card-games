@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using CardGames.Data;
 using CardGames.Services;
+using CardGames.Hubs;
 
 namespace CardGames
 {
@@ -43,6 +44,8 @@ namespace CardGames
             // Register no-op EmailSender used by account confirmation and password reset during development
             // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
             services.AddSingleton<IEmailSender, EmailSender>();
+
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +66,11 @@ namespace CardGames
             app.UseAuthentication();
 
             app.UseMvc();
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<BlackjackPVPHub>("/hubs/blackjackpvp");
+            });
         }
     }
 }
