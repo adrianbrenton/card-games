@@ -1,4 +1,27 @@
 ﻿@page
-@model BlackjackPVPModel
+@model BlackjackModel
 @{
+}
+
+<h1>Chat</h1>
+
+<form id="play-form" action="#">
+    Send a message: 
+    <input type="text" id="play-textbox" disabled /> 
+    <button id="stick-button" type="submit" disabled>Stick</button>
+    <button id="hit-button" type="submit" disabled>Hit</button>
+    
+</form>
+
+<ul id="play-list">
+</ul>
+
+@section Scripts {
+    <script src="/lib/signalr/signalr.js"></script>
+    <script type="text/javascript">
+        var playForm = document.getElementById("play-form");
+        var stickButton = document.getElementById("send-button");
+        var hitButton = document.getElementById("hit-button");
+        var messageTextBox = document.getElementById("message-textbox");
+    <script/>
 }
