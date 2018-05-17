@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.SignalR;
+
 namespace CardGames.Hubs
 {
-    public class BlackjackPVPHub
+    [Authorize]
+    public class BlackjackPVPHub : Hub
     {
-        public BlackjackPVPHub()
+        public override async Task OnConnectedAsync()
         {
+            await Clients.All.SendAsync("SendAction", Context.User.Identity.Name, "joined");
         }
     }
 }
