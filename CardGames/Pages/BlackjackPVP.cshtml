@@ -7,21 +7,30 @@
 
 <form id="play-form" action="#">
     Send a message: 
-    <input type="text" id="play-textbox" disabled /> 
-    <button id="stick-button" type="submit" disabled>Stick</button>
+    <input type="text" id="gamechat-textbox" disabled /> 
+    <button id="stand-button" type="submit" disabled>Stick</button>
     <button id="hit-button" type="submit" disabled>Hit</button>
     
 </form>
 
-<ul id="play-list">
+<ul id="card-list">
 </ul>
 
 @section Scripts {
     <script src="/lib/signalr/signalr.js"></script>
     <script type="text/javascript">
         var playForm = document.getElementById("play-form");
-        var stickButton = document.getElementById("send-button");
+        var standButton = document.getElementById("stand-button");
         var hitButton = document.getElementById("hit-button");
-        var messageTextBox = document.getElementById("message-textbox");
+        var gameChatTextBox = document.getElementById("gamechat-textbox");
+
+        function appendCard(cardName) {
+            var li = document.createElement("li");
+            li.innerText = cardName;
+            cardList.appendChild(li);
+        }
+
+        var connection = new signalR.HubConnection("/hubs/chat");
+    
     <script/>
 }
