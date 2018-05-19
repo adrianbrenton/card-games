@@ -30,6 +30,10 @@
             cardList.appendChild(li);
         }
 
+        connection.on("ReceiveCard", function(){
+
+    });
+
         var connection = new signalR.HubConnection("/hubs/chat");
     
     <script/>
