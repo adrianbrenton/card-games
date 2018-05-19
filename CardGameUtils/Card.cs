@@ -11,5 +11,10 @@ namespace CardGameUtils
             this.rank = rank;
             this.suit = suit;
         }
-    }
+
+		public override string ToString()
+		{
+            return rank.ToString() + " of " + suit.ToString();
+		}
+	}
 }
