@@ -7,6 +7,8 @@ namespace Blackjack
 {
     public class BlackjackPlayer: Player
     {
+        public string ConnectionId { get; set; }
+        public string UserName { get; set; }
         PlayerStatus status;
         public PlayerStatus Status { get { return status; } }
 
