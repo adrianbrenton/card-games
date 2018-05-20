@@ -13,7 +13,7 @@ namespace Blackjack.Tests
             BlackjackPlayer player = new BlackjackPlayer();
             player.ReceiveCard(new Card(Rank.King, Suit.Hearts));
             player.ReceiveCard(new Card(Rank.Ace, Suit.Spades));
-            Assert.Equal(PlayerStatus.OnTarget, player.Status);
+            Assert.Equal(PlayerInGameStatus.OnTarget, player.Status);
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace Blackjack.Tests
             BlackjackPlayer player = new BlackjackPlayer();
             player.ReceiveCard(new Card(Rank.Ace, Suit.Hearts));
             player.ReceiveCard(new Card(Rank.Six, Suit.Diamonds));
-            Assert.Equal(PlayerStatus.Active, player.Status);
+            Assert.Equal(PlayerInGameStatus.Active, player.Status);
         }
 
         [Fact]
@@ -32,7 +32,7 @@ namespace Blackjack.Tests
             player.ReceiveCard(new Card(Rank.King, Suit.Hearts));
             player.ReceiveCard(new Card(Rank.King, Suit.Diamonds));
             player.ReceiveCard(new Card(Rank.King, Suit.Spades));
-            Assert.Equal(PlayerStatus.Bust, player.Status);
+            Assert.Equal(PlayerInGameStatus.Bust, player.Status);
         }
     }
 }
