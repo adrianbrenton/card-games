@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Blackjack
 {
-    public enum PlayerStatus
+    public enum PlayerInGameStatus
     {
         Active, Standing, OnTarget, Bust
     }

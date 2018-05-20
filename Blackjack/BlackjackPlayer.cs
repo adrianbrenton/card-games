@@ -9,8 +9,8 @@ namespace Blackjack
     {
         public string ConnectionId { get; set; }
         public string UserName { get; set; }
-        PlayerStatus status;
-        public PlayerStatus Status { get { return status; } }
+        PlayerInGameStatus status;
+        public PlayerInGameStatus Status { get { return status; } }
 
         uint minHandValue;
         uint handScore; //highest possible hand-value without exceeding targetValue
@@ -27,9 +27,9 @@ namespace Blackjack
             base.ReceiveCard(card);
             if (card.rank == Rank.Ace) { numberOfAces++; }
             minHandValue += EvaluateCard(card);
-            if (minHandValue > targetValue) { status = PlayerStatus.Bust; }
+            if (minHandValue > targetValue) { status = PlayerInGameStatus.Bust; }
             else { handScore = BestPossibleHandScore(); }
-            if (handScore == targetValue) { status = PlayerStatus.OnTarget; }
+            if (handScore == targetValue) { status = PlayerInGameStatus.OnTarget; }
         }
 
         uint EvaluateCard(Card card)

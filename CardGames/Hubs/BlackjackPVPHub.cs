@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Blackjack;
 using Microsoft.AspNetCore.Authorization;
@@ -9,14 +10,15 @@ namespace CardGames.Hubs
     [Authorize]
     public class BlackjackPVPHub : Hub
     {
-        HubGroupList groupList = new HubGroupList();
+
+        public Queue<string> ConnectionsToJoin = new Queue<string>();
         BlackjackGame game = new BlackjackGame();
         public override async Task OnConnectedAsync()
         {
             //bool addedUserToGroup;
             //foreach (string groupName in groupList)
             {
-                
+                string newConnectionId = Context.ConnectionId;
             }
             await Clients.All.SendAsync("SendAction", Context.User.Identity.Name, "joined");
             //await Groups.AddAsync(Context.ConnectionId, roomId);  needed later when we add groups

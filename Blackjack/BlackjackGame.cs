@@ -33,7 +33,7 @@ namespace Blackjack
             {
                 foreach (BlackjackPlayer player in players)
                 {
-                    if (player.Status == PlayerStatus.Active)
+                    if (player.Status == PlayerInGameStatus.Active)
                     {
                         OfferCard(player);
                     }
@@ -55,7 +55,7 @@ namespace Blackjack
         {
             foreach (BlackjackPlayer player in players)
             {
-                if (player.Status == PlayerStatus.Active)
+                if (player.Status == PlayerInGameStatus.Active)
                 {
                     return true;
                 }
