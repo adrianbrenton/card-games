@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Collections.ObjectModel;
+using System.Linq;
 using CardGameUtils;
 
 namespace Blackjack
@@ -9,8 +10,13 @@ namespace Blackjack
     {
         int numberOfPlayers;
         Deck deck;
+        bool gameCompleted;
 
         List<BlackjackPlayer> players;
+        public ReadOnlyCollection<BlackjackPlayer> Players
+        {
+            get { return new ReadOnlyCollection<BlackjackPlayer>(players); }
+        }
 
         public BlackjackGame(int numberOfPlayers = 3)
         {
@@ -67,6 +73,34 @@ namespace Blackjack
         {
             
         }
+
+        /* Attempts to add new connectionId to an unused Player instance in
+         * players. Returns true if is successful. Returns false if all Player 
+         * instances in players already have a connectionIds. */
+        public bool AddNewConnection(string connectionId)
+        {
+            foreach(BlackjackPlayer player in players)
+            {
+                if (String.IsNullOrEmpty(player.ConnectionId))
+                {
+                    player.ConnectionId = connectionId;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void RemoveConnection(string connectionIdToRemove)
+        {
+            IEnumerable<BlackjackPlayer> playersWithUnwantedId = 
+                players.Where(player => player.ConnectionId == connectionIdToRemove);
+            foreach (BlackjackPlayer player in playersWithUnwantedId)
+            {
+                player.ConnectionId = string.Empty;
+            }
+        }
+
+        public void 
 
      
     }
