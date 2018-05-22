@@ -12,6 +12,7 @@ namespace Blackjack
         Deck deck;
         bool gameCompleted;
 
+
         List<BlackjackPlayer> players;
         public ReadOnlyCollection<BlackjackPlayer> Players
         {
@@ -100,10 +101,6 @@ namespace Blackjack
             }
         }
 
-        public void 
-
-     
-    }
 }
 
 /* PLAN:
