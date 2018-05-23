@@ -11,6 +11,7 @@ namespace Blackjack
         int numberOfPlayers;
         Deck deck;
         bool gameCompleted;
+        public event EventHandler RoundCompleted;
 
 
         List<BlackjackPlayer> players;
@@ -32,11 +33,11 @@ namespace Blackjack
 
         }
 
-    
+
         public void PlayOneGame()
         {
             DealHands();
-            while(PlayersActive())
+            while (PlayersActive())
             {
                 foreach (BlackjackPlayer player in players)
                 {
@@ -72,7 +73,7 @@ namespace Blackjack
 
         void OfferCard(BlackjackPlayer player)
         {
-            
+
         }
 
         /* Attempts to add new connectionId to an unused Player instance in
@@ -80,7 +81,7 @@ namespace Blackjack
          * instances in players already have a connectionIds. */
         public bool AddNewConnection(string connectionId)
         {
-            foreach(BlackjackPlayer player in players)
+            foreach (BlackjackPlayer player in players)
             {
                 if (String.IsNullOrEmpty(player.ConnectionId))
                 {
@@ -93,7 +94,7 @@ namespace Blackjack
 
         public void RemoveConnection(string connectionIdToRemove)
         {
-            IEnumerable<BlackjackPlayer> playersWithUnwantedId = 
+            IEnumerable<BlackjackPlayer> playersWithUnwantedId =
                 players.Where(player => player.ConnectionId == connectionIdToRemove);
             foreach (BlackjackPlayer player in playersWithUnwantedId)
             {
@@ -101,6 +102,14 @@ namespace Blackjack
             }
         }
 
+        private void OnRoundCompleted(EventArgs e)
+        {
+            if(RoundCompleted != null)
+            {
+                RoundCompleted(this, e);
+            }
+        }
+    }
 }
 
 /* PLAN:

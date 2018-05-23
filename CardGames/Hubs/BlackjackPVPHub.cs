@@ -14,6 +14,14 @@ namespace CardGames.Hubs
     {
         Queue<string> connectionsToJoin = new Queue<string>();
         BlackjackGame game = new BlackjackGame();
+
+        public BlackjackPVPHub()
+        {
+            game.RoundCompleted += Game_RoundCompleted;
+        }
+
+
+
         public override async Task OnConnectedAsync()
         {
             //bool addedUserToGroup;
@@ -56,6 +64,12 @@ namespace CardGames.Hubs
                 Debug.WriteLine("Connection added");
             }
             Debug.WriteLine("Could not find unused BlackjackPlayer instance");
+        }
+
+        //This method runs when the current round of Blackjack ends
+        private void Game_RoundCompleted(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
