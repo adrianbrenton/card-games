@@ -12,6 +12,7 @@ namespace Blackjack
         Deck deck;
         bool gameCompleted;
         public event EventHandler RoundCompleted;
+        public event EventHandler StandOrHit;
 
 
         List<BlackjackPlayer> players;
@@ -102,11 +103,19 @@ namespace Blackjack
             }
         }
 
-        private void OnRoundCompleted(EventArgs e)
+        void OnRoundCompleted(EventArgs e)
         {
             if(RoundCompleted != null)
             {
                 RoundCompleted(this, e);
+            }
+        }
+
+        void OnStandOrHit(EventArgs e)
+        {
+            if (StandOrHit != null)
+            {
+                StandOrHit(this, e);
             }
         }
     }
