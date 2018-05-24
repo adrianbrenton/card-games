@@ -54,6 +54,7 @@ namespace CardGameUtils
         }
 
         // Removes next card from the deck and returns it to the caller
+        // TODO: consider adding numberOfCards parameter to deal multiple cards
         public Card DealNext()
         {
             Card nextCard = cards.Last();
