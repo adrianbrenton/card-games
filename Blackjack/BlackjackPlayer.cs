@@ -41,7 +41,7 @@ namespace Blackjack
             return (uint)card.rank;
         }
 
-        /* This can be done much more simply if targetValue is always 21 like in
+        /* This can be done much more simply if  is always 21 like in
          * the usual casino version of Blackjack. However, this is not always
          * the case for this version of the game */
         uint BestPossibleHandScore()
