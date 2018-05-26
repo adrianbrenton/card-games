@@ -48,6 +48,8 @@ namespace Blackjack
                     }
                 }
             }
+            OnRoundCompleted(EventArgs.Empty);
+
 
         }
 
@@ -105,18 +107,12 @@ namespace Blackjack
 
         void OnRoundCompleted(EventArgs e)
         {
-            if(RoundCompleted != null)
-            {
-                RoundCompleted(this, e);
-            }
+            RoundCompleted?.Invoke(this, e);
         }
 
         void OnStandOrHit(EventArgs e)
         {
-            if (StandOrHit != null)
-            {
-                StandOrHit(this, e);
-            }
+            StandOrHit?.Invoke(this, e);
         }
     }
 }

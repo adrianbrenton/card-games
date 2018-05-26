@@ -1,0 +1,10 @@
+﻿using System;
+namespace Blackjack.Tests
+{
+	public class BlackjackGame
+	{
+		public BlackjackGame()
+		{
+		}
+	}
+}
